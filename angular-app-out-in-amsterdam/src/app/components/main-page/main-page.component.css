@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.data-table-row-class:hover {
+  background-color: rgba(240, 248, 255, 0.55);
+  cursor: pointer;
+}

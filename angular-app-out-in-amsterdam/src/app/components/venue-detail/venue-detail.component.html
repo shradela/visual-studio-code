@@ -1,0 +1,49 @@
+<mat-dialog-content>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{venue[0].title}}</mat-card-title>
+      <mat-card-subtitle>Address: {{venue[0].location.adress}}, {{venue[0].location.city}},
+        {{venue[0].location.zipcode}}, Netherlands</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="venue[0].media[0].url"
+      onerror="this.src='https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'"
+      alt="First image of venue">
+    <mat-card-content>
+      <p>
+        Get Location description.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="goToMaps(venue[0].location)">Google Maps</button>
+        <button mat-button (click)="closeDialog()">Close</button>
+    </mat-card-actions>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Gallery
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <ng-container *ngFor="let img of venue[0].media">
+            <mat-grid-tile>
+              <img [src]="img.url" layout-fill
+                onerror="this.src='https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'"
+                (click)="openImageDetail(img.url)">
+            </mat-grid-tile>
+          </ng-container>
+        </mat-grid-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Links
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let url of venue[0].urls">
+          <a [href]="url">{{url}}</a>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card>
+</mat-dialog-content>

@@ -1,27 +1,44 @@
-# MainPageTest
+# Main task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+Attached you should find a JSON dataset from "Out in Amsterdam". This dataset contains information on various venues - restaurants, cafes and bars - in and around the city of Amsterdam. You should produce an application to display the venues in a tabular format that allows you to filter the venues in various ways:
 
-## Development server
+ - By name. Note: you should be able to search by substring.
+ - By city. It should be possible to select several cities at once.
+ - By start year.
+ - By postcode.
+ 
+ In the table, you should be able to view the following information about each venue.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ - Name
+ - City
+ - Postcode
+ - Address
+ - Start year
 
-## Code scaffolding
+You should also be able to click on a venue to reveal some more details about it - it's full name and full address, URL and any pictures which are available.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Bonus task 1
 
-## Build
+Each venue in the dataset should also have a latitude and longitude. Implement a map view that allows you to view the venues
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ - The map view should also support the features defined in the table view - filtering the venues and clicking a venue to view more details about it
+ - Provide a method to switch between viewing the tabular and map views.
+ - When a venue is selected highlight it somehow on the map view
+ 
 
-## Running unit tests
+# Bonus task 2
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You should also find the "Events in Amsterdam" data set attached. Modify the application so that when a venue is selected the user can see any events which are nearby (< 1km) the selected venue - again in both map and tabular views.
 
-## Running end-to-end tests
+ - Events on the map view should be easily distinguishable from venues
+ - Events on the tabular view should be ordered by the distance from the venue
+ - Allow filtering the event list by:
+   - name
+   - year and month of the event
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Non-functional requirements
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The application should work in modern browsers
+Use the latest Angular(7+) (Angular CLI for easy scaffolding is recommended)
+Feel free to use additional libraries like Bootstrap, lodash, jQuery, etc.
+To run the application we recommend Angular CLI's ng serve, but feel free to use e.g. NodeJS with http-server, etc.
